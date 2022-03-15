@@ -1,0 +1,55 @@
+{% extends "main.html" %}
+{% block content %}
+<div class = "main">
+    {% if msg == 'correct'%}
+        <section class="sign-in" id="login">
+            <div class="container">
+                <div class="signin-content">
+                    <div class="signin-image">
+                        <figure><img src="{{url_for('static', filename='windows.png')}}" alt="windows"></figure>
+                    </div>
+
+                    <div class="signin-form">
+                        <h2 class="form-title">Windows</h2>
+                        <a href="#">Get application for Windows</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        </br></br></br></br>
+
+        <section class="sign-in" id="login">
+            <div class="container">
+                <div class="signin-content">
+                    <div class="signin-image">
+                        <figure><img src="{{url_for('static', filename='macos.jpg')}}" alt="macos"></figure>
+                    </div>
+
+                    <div class="signin-form">
+                        <h2 class="form-title">MacOS</h2>
+                        <p>Not available yet</p>
+                        <!--- <a href="#">Not available yet</a> --->
+                    </div>
+                </div>
+            </div>
+        </section>
+    {% else %}
+        <section class="sign-in" id="login">
+            <div class="container">
+                <div class="signin-content">
+                    <div class="signin-image">
+                        <figure><img src="{{url_for('static', filename='sad.jpg')}}" alt="macos"></figure>
+                    </div>
+
+                    <div class="signin-form">
+                        <h2 class="form-title">You have not registered!</h2>
+                        <a href="{{url_for('register')}}">Register Here</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    {% endif %}
+</div>
+{% endblock content %}
